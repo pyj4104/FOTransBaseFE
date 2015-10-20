@@ -1,0 +1,28 @@
+{
+  "name": "FOTransBaseFE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pyj4104@github.com/pyj4104/FOTransBaseFE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pyj4104/FOTransBaseFE/issues"
+  },
+  "homepage": "https://github.com/pyj4104/FOTransBaseFE#readme",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "coffee-script": "1.10.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "live-server": "^0.8.1"
+  }
+}

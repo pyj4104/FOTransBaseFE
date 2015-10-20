@@ -1,0 +1,10 @@
+div#main {
+	width: 75%;
+	margin: 0 auto;
+	border: 0px;
+	padding: 3%;
+}
+
+p.test {
+	word-wrap: break-word;
+}
