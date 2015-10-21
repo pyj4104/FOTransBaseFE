@@ -1,16 +1,17 @@
-(function() {
-var AppComponent = ng
-	.Component({
-		selector: "my-app",
-		template: "<p class=\"test\">tesaoehuntoehusnacuh.ntuheonthusaoethunsaoheuntoeasncuhaoenstubscnaoeuhaosehu tnhueonahucnh ntshauntsaeobntt</p>"
-	})
-	.Class({
-		constructor: function(){
+var myApp = angular.module('app', []);
 
-		}
-	})
+myApp.controller('SpicyController', ['$scope', function($scope) {
+    $scope.spice = 'very';
 
-document.addEventListener('DOMContentLoaded', function() {
-	ng.bootstrap(AppComponent);
-});
-})();
+    $scope.chiliSpicy = function() {
+        $scope.spice = 'chili';
+    };
+
+    $scope.jalapenoSpicy = function() {
+        $scope.spice = 'jalapeño';
+    };
+}]);
+
+myApp.controller('titleBarCtrl', ['$scope', function($scope){
+	$scope.hi = "hi";
+}]);
