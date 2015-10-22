@@ -2,23 +2,18 @@
 <html ng-app="app">
 	<head>
 		<title>FOTransBaseFE Test</title>
-		<script src="./node_modules/angular2/bundles/angular2.sfx.dev.js"></script>
+		<script type="text/javascript" src='./node_modules/angular/angular.js'></script>
 		<script type="text/javascript" src="./controller/TitleBarCtrl.js"></script>
-		<link rel="stylesheet" type="text/css" href="./static/main/main.css">
 		<script type="text/javascript" src="./app.js"></script>
+		<link rel="stylesheet" type="text/css" href="./static/main/main.css">
 	</head>
 	<body>
-		<script src="./node_modules/angular2/bundles/angular2.sfx.dev.js"></script>
-		<script type="text/javascript" src="./controller/TitleBarCtrl.js"></script>
 		<div id="main">
-			<div ng-controller="GreetingController">
-				{{ title }}
+			<div ng-controller="SpicyController">
+				<button ng-click="chiliSpicy()">Chili</button>
+				<button ng-click="jalapenoSpicy()">Jalapeño</button>
+				<p>The food is {{spice}} spicy!</p>
 			</div>
-		</div>
-		<div ng-controller="SpicyController">
-			<button ng-click="chiliSpicy()">Chili</button>
-			<button ng-click="jalapenoSpicy()">Jalapeño</button>
-			<p>The food is {{spice}} spicy!</p>
 		</div>
 	</body>
 </html>
