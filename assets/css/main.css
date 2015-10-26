@@ -7,7 +7,7 @@ div#main {
 	border-style: ridge;
 }
 
-div.wrapper {
+form {
 	position: relative;
 	width: 90%;
 	border: 1px;
@@ -40,10 +40,18 @@ label.expLogIn {
 	left: 5px;
 }
 
+label#idLabel {
+	top: 58px;
+}
+
+label#pwdLabel {
+	top: 82px;
+}
+
 input#loginButton {
 	position: absolute;
-	left: 122px;
-	top: 54px;
+	left: 120px;
+	top: 56px;
 	width: 100px;
 	height: 49px;
 	background: #ffffff;
