@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 	<head>
 		<title>FOTransBaseFE Test</title>
-		<script type="text/javascript" src='./node_modules/angular/angular.js'></script>
-		<script type="text/javascript" src="./controller/TitleBarCtrl.js"></script>
-		<script type="text/javascript" src="./app.js"></script>
-		<link rel="stylesheet" type="text/css" href="./static/main/main.css">
+		<!--Load libraries-->
+		<script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+		<script type="text/javascript" src="./node_modules/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="./node_modules/angular-cookies/angular-cookies.js"></script>
+
+		<!--Load Base-->
+		<script type="text/javascript" src="./app/core/app.module.js"></script>
+		<script type="text/javascript" src="./app/core/app.route.js"></script>
+
+		<!--Load Core Libraries-->
+		<script type="text/javascript" src="./app/core/services/Base64.js"></script>
+
+		<!--Import Title Bar Header-->
+		<script type="text/javascript" src="./app/core/TitleBar/titleBarDirec.js"></script>
+
+		<!--Import Authentication Module-->
+		<script type="text/javascript" src="./app/shared/Authentication/AuthenticationCtrl.js"></script>
+		<script type="text/javascript" src="./app/shared/Authentication/AuthenticationService.js"></script>
+
+		<!--Import Register Module-->
+		<script type="text/javascript" src="./app/shared/Register/RegisterCtrl.js"></script>
+		<script type="text/javascript" src="./app/shared/Register/RegisterService.js"></script>
+		<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
 	</head>
-	<body>
-		<div id="main">
-			<div ng-controller="SpicyController">
-				<button ng-click="chiliSpicy()">Chili</button>
-				<button ng-click="jalapenoSpicy()">Jalapeño</button>
-				<p>The food is {{spice}} spicy!</p>
-			</div>
+	<body ng-app="FOTransBaseFE">
+		<div id = "main">
+			<title-bar-direc></title-bar-direc>
+			<div ng-view/>
 		</div>
 	</body>
 </html>

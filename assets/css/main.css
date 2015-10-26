@@ -1,0 +1,56 @@
+div#main {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+	border: 1px;
+	padding: 3%;
+	border-style: ridge;
+}
+
+div.wrapper {
+	position: relative;
+	width: 90%;
+	border: 1px;
+	border-style: ridge;
+}
+
+p.test {
+	word-wrap: break-word;
+}
+
+div.InputBox {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	display: block;
+}
+
+input.InputLogIn {
+	position: relative;
+	top: -6px;
+	left: 3px;
+	width: 116px;
+	height: 21px;
+	border: solid #000000 1px;
+}
+
+label.expLogIn {
+	position: absolute;
+	z-index: 2;
+	left: 5px;
+}
+
+input#loginButton {
+	position: absolute;
+	left: 122px;
+	top: 54px;
+	width: 100px;
+	height: 49px;
+	background: #ffffff;
+	border: solid #000000 1px;
+	text-decoration: none;
+}
+
+input#pwd {
+	top: -7px;
+}
