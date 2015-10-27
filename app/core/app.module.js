@@ -7,4 +7,5 @@ angular.module('Authentication', []);
 angular.module("FOTransBaseFE", [
 	'ngRoute',
 	'ngCookies',
+	'ngResource',
 	'Authentication']);

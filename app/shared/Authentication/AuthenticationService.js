@@ -3,29 +3,16 @@
 angular.module('Authentication')
  
 .factory('AuthenticationService',
-    ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
-    function (Base64, $http, $cookieStore, $rootScope, $timeout) {
+    ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout', '$resource', "$log",
+    function (Base64, $http, $cookieStore, $rootScope, $timeout, $resource, $log) {
         var service = {};
 
         service.Login = function (username, password, callback) {
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            $timeout(function(){
-                var response = { success: username === 'test' && password === 'test' };
-                if(!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-            }, 1000);
-
-
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
-
+            //$http.get('https://localhost:6543/usr/:testID', {testID: 'test'})
+              //  .success(function(resp, $log){$log.log(resp)});
+            var entry = $resource('http://localhost:6543/usr/:testID', null, {'get': { method:'GET' }});
+            var resp = entry.get({testID: 'test'});
+            $log.log(resp);
         };
  
         service.SetCredentials = function (username, password) {
