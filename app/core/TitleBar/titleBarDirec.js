@@ -3,5 +3,5 @@ angular
 	.directive('titleBarDirec', titleBarDirec);
 
 function titleBarDirec(){
-	return {restrict: "AE", templateUrl: "./app/core/titleBar/titleBarTemplate.html"};
+	return {restrict: "AE", templateUrl: "./app/core/TitleBar/titleBarTemplate.html"};
 };
