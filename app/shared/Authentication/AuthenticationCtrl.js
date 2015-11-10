@@ -9,20 +9,28 @@ angular
 			$scope.defaultText = {'idLabel': '아이디', 'pwdLabel': '비밀번호'};
 			$scope.id = '';
 			$scope.password = '';
+			$scope.ServerDown = '';
 
 			usrServices.ClearCredentials();
 			
 			$scope.login = function() {
-				var resp = usrServices.Login($scope.id, $scope.password,
+				var retVal = {};
+				retVal['ID'] = $scope.id;
+				retVal['password'] = $scope.password;
+				retVal['success'] = false;
+				var resp = usrServices.Login(retVal,
 					function(resp) {
 						if (resp){
 							alert('success');
+							$log.log(resp);
+							$log.log(resp.id);
 						} else {
 							alert('failed');
 						}
 					},
-					function() {
-						alert('connection error');
+					function(resp) {
+						$log.log(resp);
+						$scope.ServerDown = '서버 다운.';
 					}
 				);
 			}

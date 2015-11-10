@@ -1,6 +1,6 @@
 angular
 	.module("FOTransBaseFE")
-	.config(['$routeProvider',
+	.config(['$routeProvider', '$logProvider',
 		function ($routeProvider, $logProvider) {
 			$logProvider.debugEnabled(true);
 			$routeProvider

@@ -2,22 +2,18 @@
 
 angular.module('FOTransBaseFE')
 .factory('usrServices', ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout', '$resource', "$log",
-	function (Base64, $http, $cookieStore, $rootScope, $timeout, $resource, $log)
+	function (Base64, $http, $cookieStore, $rootScope, $timeout, $resource, $log, $scope)
 	{
 		var service = {};
 
-        service.Login = function (username, password, successAction, errorAction)
+        service.Login = function (retVal, successAction, errorAction)
         {
+            var success = true;
             var entry = $resource('http://localhost:6543/usr/:testID', null, {'get': { method:'GET' }});
-            var resp = entry.get({testID: 'test'}, function (resp, $log) {
-                if (resp.$resolved) {
-                    $log.log(resp);
-                    $log.log('good');
-                } else {
-                    $log.log('bad');
-                }
-            }, function ($log) {
-                $log.log('connection error');
+            var resp = entry.get({testID: 'test'}, function (resp) {
+                successAction(resp);
+            }, function (resp) {
+                errorAction(resp);
             });
         };
 
