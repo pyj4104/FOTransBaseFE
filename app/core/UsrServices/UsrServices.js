@@ -9,8 +9,16 @@ angular.module('FOTransBaseFE')
         service.Login = function (username, password, successAction, errorAction)
         {
             var entry = $resource('http://localhost:6543/usr/:testID', null, {'get': { method:'GET' }});
-            var resp = entry.get({testID: 'test'}, successAction(resp), errorAction());
-            $log.log(resp);
+            var resp = entry.get({testID: 'test'}, function (resp, $log) {
+                if (resp.$resolved) {
+                    $log.log(resp);
+                    $log.log('good');
+                } else {
+                    $log.log('bad');
+                }
+            }, function ($log) {
+                $log.log('connection error');
+            });
         };
 
         service.SetCredentials = function (username, password)

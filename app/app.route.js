@@ -1,17 +1,15 @@
 angular
 	.module("FOTransBaseFE")
 	.config(['$routeProvider',
-		function($routeProvider)
-		{
+		function ($routeProvider, $logProvider) {
+			$logProvider.debugEnabled(true);
 			$routeProvider
-				.when('/',
-				{
+				.when('/', {
 					templateUrl: './app/shared/Authentication/loginView.html',
 					controller: 'AuthenticationCtrl'
 				})
-				.when('/register',
-				{
-					templateUrl: './app/shared/RegisterView.html',
+				.when('/register', {
+					templateUrl: './app/shared/Register/RegisterView.html',
 					controller: 'RegisterCtrl'
 				})
 		}
